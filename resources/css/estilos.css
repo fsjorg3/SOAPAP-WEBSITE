@@ -337,3 +337,18 @@ thead, tbody tr {
   width: var(--table-width);
   table-layout:fixed;
 }
+
+
+
+.banner-agua-puebla{
+  width: 100%;
+  margin: 40px 0px 0px 0px;
+}
+
+.banner-agua-puebla a img{
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+}
+
+
