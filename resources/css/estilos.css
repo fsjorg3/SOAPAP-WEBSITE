@@ -352,3 +352,58 @@ thead, tbody tr {
 }
 
 
+.requisitos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*width: 100%;*/
+  height: auto;
+  margin:50px;
+}
+
+.requisitos h2{
+  margin: 40px 0px;
+}
+
+.contenedor-requisitos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+ .tarjeta{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 500px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  
+}
+.tarjeta:hover{
+  transform:  translate(0px, -15px);
+}
+
+.tarjeta a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tarjeta img{
+  display: block;
+  aspect-ratio: 16/9;
+  width: 100%;
+  -webkit-box-shadow: -10px 7px 25px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -10px 7px 25px 0px rgba(0,0,0,0.75);
+  box-shadow: -10px 7px 25px 0px rgba(0,0,0,0.75);
+  border-radius: 15px;
+  filter: grayscale(var(--gray-scale-percent));
+}
