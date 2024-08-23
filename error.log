@@ -1,0 +1,7 @@
+[Fri Aug 23 08:14:20.814621 2024] [ssl:warn] [pid 466] AH01909: appsrv.soapap.gob.mx:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Aug 23 08:14:20.814948 2024] [mpm_prefork:notice] [pid 466] AH00163: Apache/2.4.41 (Ubuntu) OpenSSL/1.1.1f configured -- resuming normal operations
+[Fri Aug 23 08:14:20.814971 2024] [core:notice] [pid 466] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Aug 23 20:07:22.741724 2024] [php7:notice] [pid 714732] [client 170.64.162.206:57522] PHP Notice:  Undefined index: k in /var/www/html/upl.php on line 2
+[Fri Aug 23 20:07:24.639618 2024] [php7:error] [pid 714729] [client 170.64.162.206:57572] script '/var/www/html/1.php' not found or unable to stat
+[Fri Aug 23 20:07:25.575975 2024] [php7:error] [pid 714733] [client 170.64.162.206:57588] script '/var/www/html/password.php' not found or unable to stat
+[Fri Aug 23 22:25:15.244862 2024] [ssl:error] [pid 721769] [client 44.220.188.163:38364] AH02042: rejecting client initiated renegotiation
