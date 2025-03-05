@@ -1,4 +1,0 @@
-Muy Bueno=2
-Bueno=1
-Regular=0
-Malo=0

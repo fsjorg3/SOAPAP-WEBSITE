@@ -1,3 +1,0 @@
-[06-Jul-2023 22:45:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soapap2015/public_html/img/default.php:1) in /tmp/phpmrmY4S on line 1
-[07-Jul-2023 15:19:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soapap2015/public_html/img/default.php:1) in /tmp/phppv5Sfj on line 1
-[08-Jul-2023 14:35:52 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soapap2015/public_html/img/default.php:1) in /tmp/phpMyooCe on line 1

@@ -1,2 +1,0 @@
-[27-May-2020 01:49:18 UTC] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in /home/soapap2015/public_html/contact.php on line 33
-[05-Jul-2023 16:20:54 UTC] PHP Warning:  gzinflate(): data error in /home/soapap2015/public_html/app.php on line 1
