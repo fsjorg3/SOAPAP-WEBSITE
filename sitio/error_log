@@ -1,0 +1,2 @@
+[19-Aug-2021 13:48:09 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soapap2015/public_html/sitio/contact.php:83) in /home/soapap2015/public_html/sitio/contact.php on line 85
+[05-Jul-2023 16:20:37 UTC] PHP Warning:  gzinflate(): data error in /home/soapap2015/public_html/sitio/library.php on line 1

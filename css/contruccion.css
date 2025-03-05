@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 90%;
+    min-height: 40%;
+    border-radius:10px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img{
+    max-width: 95%;
+}
+
+
+.aviso{
+    position: fixed;
+    width: 80vw;
+    height: 50vh;
+    right: calc(50vw - 45vw);
+    top: 25%;
+    background: #fff;
+    padding: 0px 20px ;
+    border-radius:10px;
+    display: none;
+    visibility: hidden;
+    opacity: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.75);
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+}
+
+.aviso *{
+    margin: 10px 0px;
+}
+
+.aviso h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.aviso p{
+    font-size: 15px;
+    text-align: center;
+}
+
+.aviso button{
+    
+    margin-top: 40px;
+    background-color: black;
+    color: #fff;
+    width: 80%;
+    padding: 20px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+.aviso button:hover{
+    cursor: pointer;
+    background-color:#333333;
+
+}
+
+
+.activo {
+    display: flex;
+    visibility: visible;
+
+    
+}
+
+.efecto{
+    opacity: 0;
+
+}
+
+
+
+@media screen and (min-width:600px) {
+    .aviso{
+        width:60vw;
+        height: 50vh;
+        left: calc(50vw - 30vw);
+        top: 25%;
+    }
+
+    .aviso h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .aviso p{
+        font-size: 25px;
+        text-align: center;
+    }
+}
+
