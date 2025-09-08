@@ -47,7 +47,7 @@ if(get_magic_quotes_gpc()) {
 //$address = "example@themeforest.net";
 //$address = "pruebita@soapap.gob.mx";
 
-$address = "Info@soapap.gob.mx";
+$address = "info@soapap.gob.mx";
 
 
 
