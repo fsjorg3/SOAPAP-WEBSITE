@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prueba de Proxy Apache → /api/resources/normatividad/</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
+    body { margin: 24px; background:#f7f7f8; color:#111; }
+    .card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px; max-width:980px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    h1 { font-size: 1.25rem; margin: 0 0 8px; }
+    .muted { color:#555; font-size:.95rem; margin:0 0 16px; }
+    .row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin: 8px 0 16px; }
+    input[type="text"]{ flex:1 1 420px; padding:10px 12px; border:1px solid #d1d5db; border-radius:10px; background:#fafafa; }
+    button{ padding:10px 14px; border-radius:10px; border:1px solid #0ea5e9; background:#0ea5e9; color:#fff; cursor:pointer; }
+    button:disabled{ opacity:.6; cursor:not-allowed; }
+    pre{ background:#0b1020; color:#d6deff; padding:12px; border-radius:10px; overflow:auto; max-height: 50vh; font-size:.9rem;}
+    code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .kv { display:grid; grid-template-columns: 180px 1fr; gap:8px 16px; margin-top:8px; }
+    .badge{ display:inline-block; padding:2px 8px; border-radius:999px; font-size:.8rem; border:1px solid #e5e7eb; background:#fafafa; }
+    .ok{ color:#166534; background:#ecfdf5; border-color:#bbf7d0;}
+    .warn{ color:#854d0e; background:#fffbeb; border-color:#fde68a;}
+    .err{ color:#7f1d1d; background:#fef2f2; border-color:#fecaca;}
+    .help{ font-size:.9rem; color:#374151; background:#f1f5f9; border:1px dashed #cbd5e1; padding:10px; border-radius:10px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Prueba de Proxy Apache → <code>/api/resources/normatividad/</code></h1>
+    <p class="muted">Comprueba que las peticiones <strong>GET</strong> a la API pasan por el reverse proxy de Apache y llegan a tu backend.</p>
+
+    <div class="row">
+      <input id="endpoint" type="text" value="/api/resources/normatividad/" aria-label="Endpoint" />
+      <button id="btn" type="button">Probar ahora</button>
+      <button id="btnClear" type="button" style="background:#6b7280;border-color:#6b7280;">Limpiar</button>
+      <span id="httpsBadge" class="badge">…</span>
+    </div>
+
+    <div id="summary" class="kv" style="display:none;">
+      <div>Estado</div><div id="sStatus"></div>
+      <div>Tiempo</div><div id="sTime"></div>
+      <div>Tamaño aprox.</div><div id="sSize"></div>
+      <div>Content-Type</div><div id="sCT"></div>
+      <div>Fecha</div><div id="sDate"></div>
+    </div>
+
+    <div id="help" class="help" style="display:none; margin-top:16px;"></div>
+
+    <h2 style="margin:16px 0 8px;">Respuesta</h2>
+    <pre id="output"><code>— sin datos —</code></pre>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const endpoint = $('endpoint');
+    const btn = $('btn');
+    const btnClear = $('btnClear');
+    const out = $('output');
+    const summary = $('summary');
+    const sStatus = $('sStatus');
+    const sTime = $('sTime');
+    const sSize = $('sSize');
+    const sCT = $('sCT');
+    const sDate = $('sDate');
+    const help = $('help');
+    const httpsBadge = $('httpsBadge');
+
+    function setBadge(){
+      const https = location.protocol === 'https:';
+      httpsBadge.textContent = https ? 'HTTPS activo' : 'No HTTPS';
+      httpsBadge.className = 'badge ' + (https ? 'ok' : 'warn');
+    }
+
+    function pretty(data){
+      try{
+        if(typeof data === 'string'){
+          const trimmed = data.trim();
+          if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+            return JSON.stringify(JSON.parse(trimmed), null, 2);
+          }
+          return data;
+        }
+        return JSON.stringify(data, null, 2);
+      }catch(_){
+        return String(data);
+      }
+    }
+
+    async function test(){
+      const url = endpoint.value.trim() || '/api/resources/normatividad/';
+      btn.disabled = true;
+      help.style.display = 'none';
+      summary.style.display = 'none';
+      out.textContent = 'Probando…';
+      const start = performance.now();
+      let res, text;
+      try {
+        res = await fetch(url, {
+          method: 'GET',
+          cache: 'no-store',
+          headers: { 'Accept': 'application/json, text/plain;q=0.9, */*;q=0.8' }
+        });
+        const end = performance.now();
+        const ms = Math.max(0, Math.round(end - start));
+        text = await res.text();
+
+        // Campos visibles
+        sStatus.innerHTML = res.ok
+          ? `<span class="badge ok">OK ${res.status} ${res.statusText}</span>`
+          : `<span class="badge err">ERROR ${res.status} ${res.statusText}</span>`;
+        sTime.textContent = ms + ' ms';
+        sCT.textContent = res.headers.get('content-type') || '—';
+        sDate.textContent = res.headers.get('date') || new Date().toUTCString();
+
+        const sizeBytes = new Blob([text]).size;
+        sSize.textContent = sizeBytes.toLocaleString('es-MX') + ' B';
+
+        out.textContent = pretty(text);
+        summary.style.display = 'grid';
+
+        if (!res.ok) {
+          // Guía rápida de diagnóstico
+          const code = res.status;
+          let tips = '';
+          if (code === 502 || code === 504) {
+            tips = 'El proxy llegó pero el backend no respondió correctamente (¿servicio caído? ¿puerto mal? ¿ProxyPass?).';
+          } else if (code === 404) {
+            tips = 'Ruta no encontrada en el backend. Verifica que exista /api/resources/normatividad/ en tu app.';
+          } else if (code === 403) {
+            tips = 'Bloqueo de seguridad (WAF/CDN) o permisos.';
+          } else {
+            tips = 'Revisa logs de Apache y del servicio Node.';
+          }
+          help.innerHTML = `<strong>Diagnóstico:</strong> ${tips}`;
+          help.style.display = 'block';
+        } else {
+          help.innerHTML = `<strong>¡Listo!</strong> El proxy parece responder bien. Si ves datos JSON, la ruta está mapeada correctamente.`;
+          help.style.display = 'block';
+        }
+      } catch (err) {
+        out.textContent = String(err);
+        help.innerHTML = `<strong>No se pudo completar la solicitud.</strong> Posibles causas:
+        <ul>
+          <li>El VirtualHost no está activo o no hay SSL válido.</li>
+          <li>Bloqueo de red/firewall.</li>
+          <li>La ruta <code>/api/resources/normatividad/</code> no existe.</li>
+        </ul>
+        Revisa <code>sudo journalctl -xeu apache2</code> y <code>sudo journalctl -xeu &lt;tu-servicio-node&gt;</code>.`;
+        help.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    btn.addEventListener('click', test);
+    btnClear.addEventListener('click', () => {
+      out.textContent = '— sin datos —';
+      summary.style.display = 'none';
+      help.style.display = 'none';
+    });
+
+    // Ejecuta prueba automática al cargar
+    setBadge();
+    window.addEventListener('load', test);
+  </script>
+</body>
+</html>
+
