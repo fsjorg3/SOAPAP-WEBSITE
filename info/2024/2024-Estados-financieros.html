@@ -17,39 +17,39 @@
 
 <body>
 	<header>
-		<div class="banner-sup">
-		  <a href="../../index.html">
-			<img src="../../resources/svg/logo-soapap.svg" class="logo" alt="logo" srcset="">
-		  </a>
-		  <div class="d-none d-sm-none d-md-none d-lg-block d-xl-block">
-			<img src="../../resources/img/gobiernoEstado.png" class="logo" alt="logo" srcset="">
-		  </div>
+		<div class="headerBanner">
+			<a href="../../../index.html" class="headerIcon1">
+				<img src="../../../resources/svg/logo-soapap.svg" class="logo" alt="logo" srcset="">
+			</a>
+			<img src="../../../resources/img/amor_puebla.png" class="headerIcon2" alt="logo">
+			<img src="../../../resources/img/pensar_grande.png" class="headerIcon3" alt="logo">
+			<img src="../../../resources/img/gobiernoEstado.png" class="headerIcon4" alt="logo">
 		</div>
-	
+
 		<nav class="navbar navbar-expand-md navbar-dark">
-		  <div class="container-fluid">
-			<button aria-controls="navbarNav" aria-expanded="false"
-			  aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav"
-			  data-bs-toggle="collapse" type="button">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-	
-			<div class="collapse navbar-collapse" id="navbarNav">
-			  <ul class="navbar-nav mx-auto">
-				<li class="nav-item mx-md-3 mx-lg-4"><a aria-current="page" class="nav-link"
-					href="../../index.html">Inicio</a></li>
-				<li class="nav-item mx-md-3 mx-lg-4"><a class="nav-link " href="../../ubicacion.html">Contacto y
-					Ubicaci&oacute;n</a></li>
-				<li class="nav-item mx-md-3 mx-lg-4"><a class="nav-link " href="../../directorio.html">Directorio</a>
-				</li>
-				<li class="nav-item mx-md-3 mx-lg-4"><a class="nav-link " href="../../quienes-somos.html">Quienes
-					somos</a></li>
-				<li class="nav-item mx-md-3 mx-lg-4"><a class="nav-link active" href="../../recursos.html">Recursos</a></li>
-			  </ul>
+			<div class="container-fluid">
+				<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+					class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav mx-auto">
+						<li class="nav-item mx-md-3 mx-lg-4"><a aria-current="page" class="nav-link "
+								href="../../../index.html">Inicio</a></li>
+						<li class="nav-item mx-md-3 mx-lg-4"><a class="nav-link" href="../../../ubicacion.html">Contacto y
+								Ubicaci&oacute;n</a></li>
+						<li class="nav-item mx-md-3 mx-lg-4"><a class="nav-link" href="../../../directorio.html">Directorio</a>
+						</li>
+						<li class="nav-item mx-md-3 mx-lg-4"><a class="nav-link" href="../../../quienes-somos.html">Quienes
+								somos</a></li>
+						<li class="nav-item mx-md-3 mx-lg-4"><a aria-current="page" class="nav-link active"
+								href="../../../recursos.html">Recursos</a></li>
+					</ul>
+				</div>
 			</div>
-		  </div>
 		</nav>
-	  </header>
+	</header>
 
 	<article class="container-fluid mt-3">
 		<section class="row justify-content-center inicio-container">
@@ -570,7 +570,13 @@
 	<footer class="container-fluid">
 		<div class="row justify-content-center">
 			<div class="col py-4">
-				<p class="small text-white text-center mb-0">&copy; 2023&nbsp;SOAPAP. Todos los derechos reservados</p>
+				<p class="small text-white text-center mb-0">
+					&copy;
+					<script>
+						document.write(new Date().getFullYear());
+					</script>
+					SOAPAP. Todos los derechos reservados
+				</p>
 			</div>
 		</div>
 	</footer>

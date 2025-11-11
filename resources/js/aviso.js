@@ -3,6 +3,7 @@ let btn =  document.getElementById("btn_aceptar");
 let backgroundAviso =  document.getElementById("background-aviso");
 
     
+
 aviso.classList.add("activo");
 backgroundAviso.classList.add("activo");
 

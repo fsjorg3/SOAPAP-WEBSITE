@@ -17,13 +17,13 @@
 <body>
 
 	<header>
-		<div class="banner-sup">
-			<a href="index.html">
+		<div class="headerBanner" >
+			<a href="index.html" class="headerIcon1">
 				<img src="./resources/svg/logo-soapap.svg" class="logo" alt="logo" srcset="">
 			</a>
-			<div class="d-none d-sm-none d-md-none d-lg-block d-xl-block">
-				<img src="./resources/img/gobiernoEstado.png" class="logo" alt="logo" srcset="">
-			</div>
+			<img src="./resources/img/amor_puebla.png" class="headerIcon2" alt="logo">
+			<img src="./resources/img/pensar_grande.png" class="headerIcon3" alt="logo">
+			<img src="./resources/img/gobiernoEstado.png" class="headerIcon4" alt="logo">
 		</div>
 
 		<nav class="navbar navbar-expand-md navbar-dark">
@@ -57,7 +57,7 @@
 		<section class="container-fluid" style="margin-top: 180px;">
 
 			<!--<h1 class="text-center fw-bold mb-5">Bienvenidos</h1>-->
-			
+
 			<!--<section class="row justify-content-center bienvenidos">
 				<div class="col-11 col-md-9 col-lg-9 col-xl-7 col-xxl-6">
 
@@ -232,7 +232,13 @@
 	<footer class="container-fluid">
 		<div class="row justify-content-center">
 			<div class="col py-4">
-				<p class="small text-white text-center mb-0">&copy; 2024 SOAPAP. Todos los derechos reservados</p>
+				<p class="small text-white text-center mb-0">
+					&copy;
+					<script>
+						document.write(new Date().getFullYear());
+					</script>
+					 SOAPAP. Todos los derechos reservados
+				</p>
 			</div>
 		</div>
 	</footer>
