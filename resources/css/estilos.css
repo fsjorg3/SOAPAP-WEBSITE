@@ -157,18 +157,21 @@ a {
 }
 .headerIcon2{
   display: none;
-  width: 10%; 
-  height: 80%;
+  width: 191px; 
+  height: 66px;
+  max-width: 191px;
 }
 .headerIcon3{
   display: none;
-  width: 13%; 
-  height: 90%;
+  width: 248px;
+  height: 83px;
+  max-width: 248px;
 }
 .headerIcon4{
   display: none;
-  width: 11%;
-  height: 90%;
+  width: 210px;
+  height: 83px;
+  max-width: 210px;
 }
 
 
