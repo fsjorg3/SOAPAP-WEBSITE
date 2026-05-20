@@ -33,12 +33,16 @@ header {
   filter: grayscale(var(--gray-scale-percent));
 }
 
+
+
 nav {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   background-color: var(--gob-color);
 }
+
+
 
 .bienvenidos{
   margin-top: 200px;
@@ -195,6 +199,14 @@ a {
   
 }
 
+
+
+.programas-ayudas{
+  width: 100%; 
+  aspect-ratio: 4/3; 
+  margin: auto;
+}
+
 @media (min-width: 992px) {
   .logo-soapap {
     left: 75px;
@@ -205,6 +217,11 @@ a {
   .logo-gob {
     right: 75px;
   }
+
+  .programas-ayudas{
+  width: 50%; 
+
+}
 }
 
 @media (min-width: 1200px) {

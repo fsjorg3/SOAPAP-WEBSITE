@@ -1,0 +1,877 @@
+/* Base and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-text-red: #b0354c;
+}
+
+
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+/*========================== navbar ==========================*/
+
+.navbar-nuevo {
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    background-color: #a0a0a0;
+}
+
+.navbar-nuevo-banner {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 100px;
+}
+
+.navbar-nuevo-img {
+    display: block;
+    height: 100%;
+    width: auto;
+
+}
+
+
+
+.navbar-nuevo-imgs {
+    display: none;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+}
+
+
+.navbar-nuevo-links {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.navbar-nuevo-link {
+    color: white !important;
+}
+
+
+@media only screen and (min-width: 992px) {
+
+    .navbar-nuevo-banner {
+
+        align-items: center;
+        padding: 20px 120px;
+        height: 100px;
+    }
+
+    .navbar-nuevo-imgs {
+        display: block;
+        height: 100%;
+        width: auto;
+    }
+
+    .navbar-nuevo-links {
+        gap: 60px;
+
+    }
+
+}
+
+/*========================== navbar ==========================*/
+
+
+
+
+
+/* ========================== Hero Section ==========================*/
+.hero {
+    background-color: #771e36;
+    background-image: url("../assets/tlaloc.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.hero-left-column,
+.hero-right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 5%;
+}
+
+.hero-title {
+    color: #f49300;
+    font-size: clamp(2.5rem, 8vw, 8rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), 0 0 2px rgba(255, 255, 255, 0.8);
+    margin: 0;
+    text-align: center;
+}
+
+.hero-subtitle-wrapper {
+    background-color: white;
+    padding: 0.5rem 2rem;
+    box-shadow:
+        0px 10px 15px rgb(23, 23, 23),
+        0px 45px 85px rgb(53, 53, 53);
+    border-radius: 10px; 
+    margin-top: 0.5rem;
+}
+
+.hero-subtitle {
+    color: #b0354c;
+    font-style: italic;
+    font-size: clamp(2.5rem, 8vw, 8rem);
+    font-weight: 800;
+    text-shadow: 3px 3px 5px rgba(57, 57, 57, 0.5), 0 0 2px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero-subtitle-y {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    transform: translateY(-5px);
+}
+
+.hero-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.hero-discount-group, .hero-convenios-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.hero-convenios-card {
+    border-left: 5px solid #42ac7c;
+    justify-content: center;
+}
+
+.convenios-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.convenios-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin: 0;
+}
+
+.convenios-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #42ac7c;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.convenios-amount {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: white;
+    font-weight: 900;
+    margin: 0;
+    text-shadow: 2px 2px 0 #188780, 0px 5px 10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.convenios-amount span {
+    font-size: clamp(4rem, 10vw, 7rem);
+    color: #f49300;
+    line-height: 0.8;
+}
+
+.convenios-suffix {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin: 0;
+}
+
+.discount-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.9;
+}
+
+.discount-prefix, .discount-suffix {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.discount-amount {
+    font-size: clamp(6rem, 15vw, 12rem);
+    color: white;
+    font-weight: 900;
+    margin: 0;
+    text-shadow: 3px 3px 0 #b0354c, 0px 5px 10px rgba(0,0,0,0.5);
+}
+
+.discount-percent {
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: #f49300;
+    text-shadow: none;
+}
+
+.discount-sub {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.discount-concept {
+    color: #f49300;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.discount-disclaimer {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.hero-image {
+    width: 90%;
+    max-width: 500px;
+    filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.8));
+    margin-bottom: 2rem;
+}
+
+.hero-info-text-wrapper {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 0 5%;
+    text-align: center;
+}
+
+.hero-info-text {
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+/* ========================== Hero Section ==========================*/
+
+
+
+
+.beneficios {
+    overflow-x: hidden;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.beneficio-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.beneficio-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #f49300;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(244, 147, 0, 0.4);
+}
+
+.beneficio-icon img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.beneficio-content h3 {
+    color: #771e36;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.beneficio-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.beneficio-content li {
+    color: #555;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.4;
+}
+
+.beneficio-content li::before {
+    content: "•";
+    color: #f49300;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+
+
+.candidatos {
+    overflow-x: hidden;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-title {
+    font-weight: 1000;
+    color: #771e36;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-transform: uppercase;
+}
+
+.candidatos-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.candidatos-text-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.info-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.info-card p {
+    color: #444;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    text-align: left;
+    margin: 0;
+}
+
+.primary-card {
+    border-left: 5px solid #b0354c;
+}
+
+.secondary-card {
+    border-left: 5px solid #f49300;
+}
+
+.candidatos-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.candidatos-image {
+    width: 90%;
+    max-width: 250px;
+    margin-bottom: -2rem;
+    z-index: 1;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+}
+
+.sidebar-info-card {
+    background: #771e36;
+    color: white;
+    padding: 3rem 2rem 2rem;
+    border-radius: 15px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.sidebar-item  ul{
+     list-style-type:none;
+}
+
+.sidebar-item-link{
+    display: block;
+     text-decoration: none;
+     color: white;
+     font-size: 1.1rem;
+     font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.sidebar-item h3 {
+    color: #f49300;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+
+
+/* ========================== beneficios Section ==========================*/
+
+
+.recargos-reduccion {
+    overflow-x: hidden;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.reduccion-domestico, .reduccion-comercial, .convenios-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 3rem auto;
+}
+
+.domestico-table, .comercial-table, .convenios-table {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+}
+
+.domestico-table-title, .comercial-table-title, .convenios-table-title {
+    width: 100%;
+    min-height: 70px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.domestico-table-title { background-color: #771e36; }
+.comercial-table-title { background-color: #f49300; }
+.convenios-table-title { background-color: #42ac7c; }
+
+.domestico-table-title h3, .comercial-table-title h3, .convenios-table-title h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.domestico-table-header, .comercial-table-header, .convenios-table-header {
+    display: flex;
+    width: 100%;
+    background-color: #f1f3f5;
+    border-bottom: 2px solid #ddd;
+}
+
+.domestico-table-row, .comercial-table-row, .convenios-table-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.domestico-table-row:last-child, .comercial-table-row:last-child, .convenios-table-row:last-child {
+    border-bottom: none;
+}
+
+/* Hover effects temáticos */
+.domestico-table-row:hover {
+    background-color: #fff2f5;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(119, 30, 54, 0.15);
+    z-index: 10;
+    position: relative;
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+.comercial-table-row:hover {
+    background-color: #fff9f0;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(244, 147, 0, 0.15);
+    z-index: 10;
+    position: relative;
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+.convenios-table-row:hover {
+    background-color: #f0faf5;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(66, 172, 124, 0.15);
+    z-index: 10;
+    position: relative;
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+.table-element {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding: 1rem 0.5rem;
+    color: #444;
+}
+
+.domestico-table-header .table-element, 
+.comercial-table-header .table-element,
+.convenios-table-header .table-element {
+    font-weight: bold;
+    color: #333;
+}
+
+.domestico-table-row .table-element:first-child,
+.comercial-table-row .table-element:first-child,
+.convenios-table-row .table-element:first-child {
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+}
+
+.convenios {
+    overflow-x: hidden;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries for Desktop layout */
+@media (min-width: 992px) {
+
+    /* ========================== Hero Section ==========================*/
+    .hero {
+        flex-direction: row;
+        min-height: calc(100vh - 156px); /* Fix overall height to avoid scroll */
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .hero-left-column {
+        width: 50%;
+        align-items: center; 
+        justify-content: center;
+        padding-left: 5%;
+        margin-bottom: 0;
+    }
+
+    .hero-right-column {
+        width: 50%;
+        align-items: center; 
+        justify-content: center;
+        padding-right: 5%;
+    }
+
+    .hero-text-content {
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 5vw, 6rem);
+        text-align: left;
+    }
+
+    .hero-subtitle-wrapper {
+        margin-left: 1rem;
+        transform: rotate(-2deg);
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(2.5rem, 4vw, 5rem);
+    }
+
+    .hero-cards-wrapper {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .hero-discount-group, .hero-convenios-card {
+        width: 50%;
+        align-items: flex-start;
+        padding: 1.5rem;
+        border-radius: 0 15px 15px 0;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        margin-top: 0;
+    }
+
+    .hero-discount-group {
+        border-left: 5px solid #f49300;
+    }
+
+    .hero-convenios-card {
+        border-left: 5px solid #42ac7c;
+        justify-content: flex-start;
+    }
+
+    .convenios-content {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .discount-main {
+        align-items: flex-start;
+    }
+
+    .discount-prefix, .discount-suffix {
+        font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+
+    .discount-amount {
+        font-size: clamp(4rem, 6vw, 7rem);
+    }
+
+    .discount-sub {
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    .discount-concept {
+        font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    }
+
+    .convenios-title {
+        font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+
+    .convenios-subtitle {
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
+    }
+
+    .convenios-amount {
+        font-size: clamp(1.5rem, 2.5vw, 3rem);
+    }
+
+    .convenios-amount span {
+        font-size: clamp(2.5rem, 4vw, 5rem);
+    }
+
+    .convenios-suffix {
+        font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+
+    .hero-image {
+        filter: drop-shadow(20px -20px 30px rgba(255, 255, 255, 0.8));
+        width: 100%;
+        max-width: 450px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-info-text-wrapper {
+        padding: 1rem 2rem;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-info-text {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    /* ========================== Hero Section ==========================*/
+
+
+    /* ========================== beneficios Section ==========================*/
+    .beneficios {
+        padding: 2rem 5rem;
+    }
+
+
+    .beneficios-description-text {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+
+
+    /* ========================== candidatos Section ==========================*/
+
+    .candidatos {
+        padding: 4rem 10%;
+    }
+
+    .candidatos-layout {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: center;
+        gap: 4rem;
+    }
+
+    .candidatos-text-cards {
+        width: 60%;
+        justify-content: center;
+    }
+
+    .candidatos-sidebar {
+        width: 40%;
+    }
+
+    .candidatos-image {
+        max-width: 300px;
+    }
+
+    .info-card {
+        padding: 2.5rem;
+    }
+
+
+
+
+    /* ========================== Tablas Recargos y Convenios ==========================*/
+    .recargos-reduccion, .convenios {
+        padding: 6rem 10%;
+    }
+
+    .reduccion-domestico, .reduccion-comercial, .convenios-wrapper {
+        width: 85%;
+        margin-bottom: 4rem;
+    }
+
+    .domestico-table, .comercial-table, .convenios-table {
+        margin-bottom: 2rem;
+    }
+
+    /* ========================== Beneficios ==========================*/
+    .beneficios {
+        padding: 6rem 10%;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+}
